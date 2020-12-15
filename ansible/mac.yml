@@ -159,5 +159,5 @@
             - 'vagrant-manager'
             - 'wine-stable'
           state: present
-          update_homebrew: yes
-          upgrade_all: yes
+          # update_homebrew: yes
+          # upgrade_all: yes
