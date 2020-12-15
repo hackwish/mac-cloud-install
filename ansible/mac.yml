@@ -59,7 +59,7 @@
             # - 'syncthing'
             - 'terraform'
             - 'terraform-inventory'
-            - 'terraform-provisioner-ansible'
+            # - 'terraform-provisioner-ansible'
             - 'the_silver_searcher'
             - 'tmux'
             - 'tree'
