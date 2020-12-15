@@ -3,7 +3,7 @@
   become: false
   tasks:
       - name: "Install Homebrew Packages"
-        homebrew:
+        community.general.homebrew:
           name: "{{ packages }}"
         vars:
           packages:
@@ -78,7 +78,7 @@
           upgrade_all: yes
       
       - name: "Install Homebrew Cask Packages"
-        homebrew_cask:
+        community.general.homebrew_cask:
           name: "{{ packages }}"
         vars:
           packages:

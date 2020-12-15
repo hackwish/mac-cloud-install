@@ -216,5 +216,8 @@ ANSIBLE_CUSTOM_DIR=`pwd`
 ## echo "Descargando requirements"
 ## ansible-galaxy install --force -r ${ANSIBLE_CUSTOM_DIR}/ansible/requirements.yml
 
+echo "Activando Colecciones"
+ansible-galaxy collection install community.general
+
 echo "Comienza Deployment con Ansible"
 ansible-playbook -vv -i ${ANSIBLE_CUSTOM_DIR}/ansible/hosts ${ANSIBLE_CUSTOM_DIR}/ansible/mac.yml
