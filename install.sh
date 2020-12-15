@@ -117,6 +117,7 @@ tap "heroku/brew"
 tap "homebrew/cask-fonts"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
+brew "ansible"
 cask "xquartz"
 EOF
 
@@ -201,12 +202,12 @@ fi
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #Install ansible
-if [ ansible --version | grep 'ansible' ]; 
-then
-  brew upgrade ansible
-else
-  brew install ansible
-fi
+# if [ ansible --version | grep 'ansible' ]; 
+# then
+#   brew upgrade ansible
+# else
+#   brew install ansible
+# fi
 
 #Ansible
 echo "Iniciando Ansible Deploy"
@@ -215,5 +216,5 @@ ANSIBLE_CUSTOM_DIR=`pwd`
 ## echo "Descargando requirements"
 ## ansible-galaxy install --force -r ${ANSIBLE_CUSTOM_DIR}/ansible/requirements.yml
 
-# echo "Comienza Deployment con Ansible"
-# ansible-playbook -vv -i ${ANSIBLE_CUSTOM_DIR}/ansible/hosts ${ANSIBLE_CUSTOM_DIR}/ansible/mac.yml
+echo "Comienza Deployment con Ansible"
+ansible-playbook -vv -i ${ANSIBLE_CUSTOM_DIR}/ansible/hosts ${ANSIBLE_CUSTOM_DIR}/ansible/mac.yml
