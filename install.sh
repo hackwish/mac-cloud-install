@@ -102,7 +102,7 @@ if ! command -v brew >/dev/null; then
     export PATH="/usr/local/bin:$PATH"
 fi
 
-if brew list | grep -Fq brew-cask; then
+if brew list --formula | grep -Fq brew-cask; then
   fancy_echo "Uninstalling old Homebrew-Cask ..."
   brew uninstall --force brew-cask
 fi
@@ -201,7 +201,12 @@ fi
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #Install ansible
-brew install ansible
+if [ ansible --version | grep 'ansible' ]; 
+then
+  brew upgrade ansible
+else
+  brew install ansible
+fi
 
 #Ansible
 echo "Iniciando Ansible Deploy"
