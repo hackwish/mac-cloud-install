@@ -105,7 +105,7 @@
             - 'java'
             # - 'keepassxc'
             # - 'lastpass'
-            - 'libreoffice'
+            # - 'libreoffice'
             - 'macvim'
             - 'meld'
             # - 'microsoft-teams'
