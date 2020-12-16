@@ -22,7 +22,7 @@
             - 'autoconf'
             - 'bash-completion'
             - 'boot2docker'
-            - 'ccze'
+            # - 'ccze'
             - 'coreutils'
             - 'cowsay'
             - 'curl'
@@ -159,5 +159,4 @@
             - 'vagrant-manager'
             - 'wine-stable'
           state: present
-          # update_homebrew: yes
-          # upgrade_all: yes
+          upgrade_all: yes
