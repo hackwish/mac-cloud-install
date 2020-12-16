@@ -187,11 +187,22 @@ then
     rm -rf fonts
 fi
 
-if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]
-then
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-    sed -i -e 's/robbyrussell/powerlevel9k\/powerlevel9k/g' ~/.zshrc
+# Custom oh-my-zsh theme
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="pygmalion"/g' ~/.zshrc
+
+# Add Custom config on zshrc
+if [ $(cat ~/.zshrc | grep 'NVM_DIR') == "" ) ]; then
+  cat <<EOT >> ~/.zshrc
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+EOT
 fi
+
+# if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]
+# then
+#     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+#     sed -i -e 's/ZSH_THEME=robbyrussell/ZSH_THEME=powerlevel9k\/powerlevel9k/g' ~/.zshrc
+# fi
 
 # if [ -f "$HOME/.laptop.local" ]; then
 #   fancy_echo "Running your customizations from ~/.laptop.local ..."

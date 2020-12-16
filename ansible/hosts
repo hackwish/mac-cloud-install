@@ -1,6 +1,6 @@
-[desktop]
+[macos]
 127.0.0.1
 
-[desktop:vars]
+[macos:vars]
 ansible_connection=local
 ansible_user=root

@@ -1,5 +1,5 @@
-- name: Deploy MAC Desktop with Ansible
-  hosts: desktop
+- name: Deploy MAC Machine with Ansible
+  hosts: macos
   become: false
   tasks:
       - name: "Install Homebrew Packages"
@@ -14,11 +14,9 @@
             # - 'minikube'
             # - 'nomad'
             # - 'openfortivpn'
-            # - 'powerlevel9k'
             # - 'rancher-compose'
             # - 'rdesktop'
             # - 'syncthing'
-            # - 'terraform-provisioner-ansible'
             - 'autoconf'
             - 'bash-completion'
             - 'boot2docker'
@@ -137,7 +135,6 @@
             # - 'virtualbox-extension-pack'
             # - 'visual-studio-code'
             # - 'vlc'
-            - 'xquartz'
             # - 'zoom'
             - 'android-platform-tools'
             - 'android-studio'
@@ -158,7 +155,10 @@
             - 'vagrant'
             - 'vagrant-manager'
             - 'wine-stable'
+            - 'xquartz'
           state: present
           upgrade_all: yes
           update_homebrew: yes
           # install_options: force
+
+# Aditional Tasks
