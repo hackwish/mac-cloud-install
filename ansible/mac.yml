@@ -161,3 +161,4 @@
           state: present
           upgrade_all: yes
           update_homebrew: yes
+          install_options: force
