@@ -137,7 +137,7 @@
             # - 'virtualbox-extension-pack'
             # - 'visual-studio-code'
             # - 'vlc'
-            # - 'xquartz'
+            - 'xquartz'
             # - 'zoom'
             - 'android-platform-tools'
             - 'android-studio'
@@ -161,4 +161,4 @@
           state: present
           upgrade_all: yes
           update_homebrew: yes
-          install_options: force
+          # install_options: force
