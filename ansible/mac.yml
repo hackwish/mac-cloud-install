@@ -160,3 +160,4 @@
             - 'wine-stable'
           state: present
           upgrade_all: yes
+          update_homebrew: yes
