@@ -15,13 +15,15 @@
       group:
         name: wheel
         state: present
-
+      become: true
+      
     - name: Allow 'wheel' group to have passwordless sudo
       lineinfile:
         dest: /etc/sudoers
         state: present
         regexp: '^%wheel'
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        become: true
         validate: visudo -cf %s
 
     - name: Add sudoers users to wheel group
@@ -30,6 +32,7 @@
         groups: wheel
         append: yes
       with_items: "{{ sudoers }}"
+      become: true
       ignore_errors: true
 
     - name: Fix oh-my-zsh permissions issue
