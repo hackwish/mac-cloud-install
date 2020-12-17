@@ -193,6 +193,7 @@ sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="pygmalion"/g' ~/.zshrc
 # Add Custom config on zshrc
 if [[ $(cat ~/.zshrc | grep 'NVM_DIR') == "" ]]; then
   cat <<EOT >> ~/.zshrc
+  # Add custom NVM configs
   export NVM_DIR=~/.nvm
   source $(brew --prefix nvm)/nvm.sh
 EOT
