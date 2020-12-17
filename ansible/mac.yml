@@ -95,7 +95,9 @@
         vars:
           packages:
             - 'homebrew/cask'
+            - 'homebrew/cask-versions'
             - 'homebrew/core'
+            - 'caskroom/cask'
           state: present
 
       - name: "Install Homebrew Cask Packages"
