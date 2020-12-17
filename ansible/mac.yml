@@ -3,6 +3,41 @@
   become: false
 
   vars:
+    sudoers:
+      - admin
+      - administrator
+    ohmyzsh_folders:
+      - "/usr/local/share/zsh"
+      - "/usr/local/share/zsh/site-functions"
+
+  tasks:
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: visudo -cf %s
+
+    - name: Add sudoers users to wheel group
+      user:
+        name: "{{ item }}"
+        groups: wheel
+        append: yes
+      with_items: "{{ sudoers }}"
+      ignore_errors: true
+
+    - name: Fix oh-my-zsh permissions issue
+      file:
+        path: "{{ item }}"
+        mode: '0644'
+        recurse: yes
+      with_items: "{{ ohmyzsh_folders }}"
 
   roles:
     - common-mac

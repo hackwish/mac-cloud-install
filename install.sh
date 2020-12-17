@@ -199,6 +199,10 @@ if [[ $(cat ~/.zshrc | grep 'NVM_DIR') == "" ]]; then
 EOT
 fi
 
+# Fix oh-my-zsh permissions issue
+# chmod -R 644 /usr/local/share/zsh
+# sudo chmod -R 644 /usr/local/share/zsh/site-functions
+
 # if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]
 # then
 #     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
