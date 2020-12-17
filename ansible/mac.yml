@@ -97,7 +97,7 @@
             - 'homebrew/cask'
             - 'homebrew/cask-versions'
             - 'homebrew/core'
-            - 'caskroom/cask'
+            # - 'caskroom/cask'
           state: present
 
       - name: "Install Homebrew Cask Packages"
