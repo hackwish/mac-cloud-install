@@ -1,0 +1,6 @@
+---
+- name: common-mac
+  src: https://github.com/hackwish/ansible-common-mac.git
+
+- name: gitlab-runner
+  src: https://github.com/hackwish/ansible-gitlab-runner.git
