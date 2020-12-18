@@ -199,6 +199,15 @@ if [[ $(cat ~/.zshrc | grep 'NVM_DIR') == "" ]]; then
 EOT
 fi
 
+if [[ $(cat ~/.zshrc | grep 'LC_ALL') == "" ]]; then
+  cat <<EOT >> ~/.zshrc
+  # Add custom LANG configs for Fastlane
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US.UTF-8
+EOT
+fi
+
 # Fix oh-my-zsh permissions issue
 # chmod -R 644 /usr/local/share/zsh
 # sudo chmod -R 644 /usr/local/share/zsh/site-functions
